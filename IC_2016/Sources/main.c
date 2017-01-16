@@ -163,7 +163,7 @@ void PIT_CH0_ISR(void){
 	DCU.BGND.B.BGND_B = 0xFF;
     //apparition image bird view eye
 	DCU.LAYER[11].CTRLDESCL4.B.EN = 1;
-	//int IT_CAN_autorisee = 1; //ce n'est que maintenant que j'autorise les IT en provenance du CAN
+	//IT_CAN_autorisee = 1; //ce n'est que maintenant que j'autorise les IT en provenance du CAN
  /*************************************************************************************************/
 	//ARRET IT ICI POUR LE MODE NORMAL LCD
 	//pour le mode demonstration LCD >>

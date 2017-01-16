@@ -7,6 +7,7 @@
 
 #include "IntcInterrupts.h"
 #include "port.h"
+#include "gpio.h"
 #include "spi_can.h"
 
 extern struct _SPI_DRV SPI[3];

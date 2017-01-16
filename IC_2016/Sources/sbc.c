@@ -8,6 +8,7 @@
 #include "MPC5645S.h"
 #include "IntcInterrupts.h"
 #include "port.h"
+#include "gpio.h"
 
 #include "can_dictionnary.h"
 #include "spi_can.h"

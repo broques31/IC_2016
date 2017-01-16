@@ -8,6 +8,7 @@
 #include "step_motors.h"
 #include "MPC5645S.h"
 #include "port.h"
+#include "gpio.h"
 
 /** 
  * CONFIGURE A PIN FOR USING SMC MODULE.
