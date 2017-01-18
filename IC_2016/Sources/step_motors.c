@@ -87,11 +87,11 @@ void initStepMotor(struct StepMotor* motor) {
 	(*motor).ready = 0 ;
 	if ((*motor).logic == 0) {
 		(*motor).currentStep = 0 ;
-		(*motor).stepOrder = 0 ;
+		(*motor).stepToReach = 0 ;
 	}
 	else {
 		(*motor).currentStep = (*motor).stepsToMax ;
-		(*motor).stepOrder = (*motor).stepsToMax ;
+		(*motor).stepToReach = (*motor).stepsToMax ;
 	}
 	// Pin configuration
 	configurePin((*motor).C0M) ;
@@ -178,7 +178,7 @@ void resetCurrentStep(struct StepMotor* motor) {
  * @param physicalValue		Value to be indicated by the needle.
  * @return					None.
  */
-void setOrder(struct StepMotor* motor, float physicalValue) {
+void setValue(struct StepMotor* motor, float physicalValue) {
 	float v = physicalValue ;
 	float min = (float) (*motor).valueMin ;
 	float max = (float) (*motor).valueMax ;
@@ -200,7 +200,7 @@ void setOrder(struct StepMotor* motor, float physicalValue) {
 	else {
 		stepNumber = ((stepMax*(v-max))/(min-max))-offset ;
 	}
-	(*motor).stepOrder = (unsigned int) stepNumber ;
+	(*motor).stepToReach = (unsigned int) stepNumber ;
 }
 
 /** 
@@ -352,7 +352,7 @@ void microstep(struct StepMotor* motor) {
  */
 void update(struct StepMotor* motor) {
 	// Regulation
-	if ((*motor).currentStep < (*motor).stepOrder) {
+	if ((*motor).currentStep < (*motor).stepToReach) {
 		if ((*motor).logic == 0) {
 			increase(motor) ;
 		}
@@ -360,7 +360,7 @@ void update(struct StepMotor* motor) {
 			decrease(motor) ;
 		}
 	}
-	if ((*motor).currentStep > (*motor).stepOrder) {
+	if ((*motor).currentStep > (*motor).stepToReach) {
 		if ((*motor).logic == 0) {
 			decrease(motor) ;
 		}

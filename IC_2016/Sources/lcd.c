@@ -1188,8 +1188,8 @@ void LoadMemoryGraphic_Layer10(void){
 
 //initialisation contenu graphique LCD
 void InitLayerMemory(void){
-	//Create_Image_FORD();
-	Create_Image_car_bird_eye(); // probleme debordement SRAM non graphique (compiler/debugger une premiere fois uniquement avec car_bird_eye puis mettre en commentaire, compiler/debugger)	
+	Create_Image_FORD();
+	//Create_Image_car_bird_eye(); // probleme debordement SRAM non graphique (compiler/debugger une premiere fois uniquement avec car_bird_eye puis mettre en commentaire, compiler/debugger)	
 	Create_Image_cadenas();
 	Create_Image_hijack();
 	Create_Image_vitre();

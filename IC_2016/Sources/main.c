@@ -311,10 +311,10 @@ void PIT_CH1_ISR(void) {
 			sensTemperature = 0 ;
 		}
 		
-		setOrder(ptrSpeedIndicator, valSpeed) ;
-		setOrder(ptrRpmIndicator, valRPM) ;
-		setOrder(ptrOilIndicator, valOil) ;
-		setOrder(ptrTemperatureIndicator, valTemperature) ;
+		setValue(ptrSpeedIndicator, valSpeed) ;
+		setValue(ptrRpmIndicator, valRPM) ;
+		setValue(ptrOilIndicator, valOil) ;
+		setValue(ptrTemperatureIndicator, valTemperature) ;
 	}
 }
 

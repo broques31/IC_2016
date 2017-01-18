@@ -72,7 +72,7 @@ struct StepMotor {
 	// Positioning
 	unsigned int stepsToMax ; // Number of steps required to indicate 'valueMax'.
 	unsigned int currentStep ; // Current position.
-	unsigned int stepOrder ; // Objective.
+	unsigned int stepToReach ; // Objective.
 	int logic ; // 0 => stepUp() to increase value.
 				// 1 => StepDown() to increase value.
 				// Depends of the mechanical configuration of the step motor and its needle.
@@ -105,7 +105,7 @@ int calibrate(struct StepMotor* motor) ;
 
 void resetCurrentStep(struct StepMotor* motor) ;
 
-void setOrder(struct StepMotor* motor, float physicalValue) ;
+void setValue(struct StepMotor* motor, float physicalValue) ;
 
 void increase(struct StepMotor* motor) ;
 
